@@ -3,7 +3,6 @@ import React, { useReducer, useState } from 'react';
 
 const INITIAL_STATE = {
     name: '',
-    email: '',
     password: ''
 };
 
@@ -13,11 +12,6 @@ const reducerFunction = (state, action) => {
             return {
               ...state,
                 name: action.payload
-            };
-        case 'UPDATE_EMAIL':
-            return {
-              ...state,
-                email: action.payload
             };
         case 'UPDATE_PASSWORD':
             return {
@@ -41,13 +35,6 @@ const LoginPage = () => {
     const updateNameHandler = (event) => {
         dispatch({
             type: 'UPDATE_NAME',
-            payload: event.target.value
-        })
-    }
-
-    const updateEmailHandler = (event) => {
-        dispatch({
-            type: 'UPDATE_EMAIL',
             payload: event.target.value
         })
     }
@@ -95,7 +82,6 @@ const LoginPage = () => {
         <Stack alignItems='center' justifyContent='center' gap={2} sx={{ height: '100vh' }}>
             <h2>Login</h2>
             <TextField value={state.name} onChange={updateNameHandler} name='name' placeholder='Name' label='Name' />
-            <TextField value={state.email} onChange={updateEmailHandler} name='email' placeholder='Email' label='Email' type='email' />
             <TextField value={state.password} onChange={updatedPasswordHandler} name='password' placeholder='Password' label='Password' type='password' />
             <Button type='submit' variant='contained'>Login</Button>
             <div>Not registered yet? <a href='/signup'> Create an account</a></div>
