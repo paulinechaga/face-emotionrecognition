@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useReducer, useState } from 'react'
 import { Button, Stack, TextField } from '@mui/material'
 
 const INITIAL_STATE = {
@@ -77,7 +77,7 @@ const SignupPage = () => {
 
 
 
- return(
+ return(        
     <form onSubmit={handleSubmit}>
         <Stack alignItems='center' justifyContent='center' gap={2} sx={{ height: '100vh' }}>
         <h2>Signup</h2>
