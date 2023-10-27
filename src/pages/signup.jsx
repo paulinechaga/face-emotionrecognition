@@ -1,5 +1,6 @@
 import React, { useReducer, useState } from 'react'
 import { Button, Stack, TextField } from '@mui/material'
+import './signup.css';
 
 const INITIAL_STATE = {
     name: '',
