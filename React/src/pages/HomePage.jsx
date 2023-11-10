@@ -29,6 +29,7 @@ const Home = () => {
             </Toolbar>
         </AppBar>
         </Box>
+        
     );
     
 };
